@@ -48,10 +48,11 @@ export default function Home() {
 
     const formData = new FormData();
     formData.append("video", videoFile);
-
+    const backend = process.env.NEXT_PUBLIC_BACKEND_URL;
+    
     try {
       const response = await axios.post(
-        "http://0.0.0.0:8000/predict",
+        `${backend}/predict`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
