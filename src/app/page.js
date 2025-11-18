@@ -51,7 +51,7 @@ export default function Home() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/predict",
+        "http://0.0.0.0:8000/predict",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
