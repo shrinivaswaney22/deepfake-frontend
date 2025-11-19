@@ -48,11 +48,10 @@ export default function Home() {
 
     const formData = new FormData();
     formData.append("video", videoFile);
-    const backend = process.env.NEXT_PUBLIC_BACKEND_URL;
     
     try {
       const response = await axios.post(
-        `${backend}/predict`,
+        `deepfake-backend-production-b146.up.railway.app/predict`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
